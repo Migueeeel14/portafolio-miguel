@@ -1,0 +1,23 @@
+{
+  "name": "portafolio-miguel",
+  "version": "1.0.0",
+  "description": "Portafolio web donde se presentan mis habilidades como desarrollador Full Stack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Migueeeel14/portafolio-miguel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Migueeeel14/portafolio-miguel/issues"
+  },
+  "homepage": "https://github.com/Migueeeel14/portafolio-miguel#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.7"
+  }
+}

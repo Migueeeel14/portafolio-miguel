@@ -1,0 +1,168 @@
+/* Animación del título */
+.animate-title {
+    animation: slideInUp 1s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Máquina de escribir */
+.typing-container {
+    width: fit-content;
+    border-right: 2px solid #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.typing-text {
+    font-family: 'Courier New', monospace;
+    font-size: 1.25rem;
+    color: #00ffcc;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #fff; }
+}
+
+/* Palabras destacadas */
+.highlight-word {
+    color: #0dcaf0;
+    font-weight: bold;
+}
+
+/* Efecto glow al botón */
+.btn-hover-glow:hover {
+    box-shadow: 0 0 15px #0dcaf0, 0 0 40px #0dcaf0;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Línea animada */
+.animated-line {
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(to right, #0dcaf0, #6610f2);
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-line::before {
+    content: "";
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    background: white;
+    animation: moveLine 2s linear infinite;
+}
+
+@keyframes moveLine {
+    0% {
+        left: -20%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Barra lateral scrollable en móvil si es necesario */
+@media (max-width: 991.98px) {
+    .custom-nav {
+        max-height: 40vh;
+        overflow-y: auto;
+    }
+}
+
+/* Header fijo y compacto en móvil */
+@media (max-width: 991.98px) {
+    #mainNav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 60px;
+        min-height: 60px !important;
+        max-height: 60px !important;
+        z-index: 1050;
+        flex-direction: row !important;
+        align-items: center !important;
+        padding: 0 10px !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    #mainNav .navbar-nav {
+        flex-direction: row !important;
+        width: auto !important;
+        margin-left: auto;
+        margin-right: 0;
+    }
+    #mainNav .nav-link {
+        padding: 0 8px;
+        font-size: 1.1rem;
+    }
+    #mainNav img {
+        width: 40px !important;
+        height: 40px !important;
+        margin-bottom: 0 !important;
+    }
+    #mainNav .navbar-brand,
+    #mainNav p,
+    #mainNav .btn {
+        font-size: 0.95rem !important;
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+    }
+    .content-area {
+        margin-top: 70px; /* para que el contenido no quede debajo del header */
+    }
+}
+
+/* Barra lateral ocupa toda la altura en escritorio */
+@media (min-width: 992px) {
+    #mainNav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        min-height: 100vh;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    #mainNav .navbar-nav {
+        flex-direction: column !important;
+        width: 100%;
+        margin-top: 2rem;
+    }
+    #mainNav img {
+        width: 90px !important;
+        height: 90px !important;
+        margin-bottom: 1rem;
+    }
+    #mainNav .navbar-brand {
+        font-size: 1.3rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    #mainNav p {
+        font-size: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+}
